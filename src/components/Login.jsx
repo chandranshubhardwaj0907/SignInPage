@@ -34,7 +34,7 @@ const Login = () => {
     if (message) return;
 
     if (!isSignInForm) {
-      // Sign Up Logic
+      
       createUserWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
           const user = userCredential.user;
@@ -67,10 +67,10 @@ const Login = () => {
           }
         });
     } else {
-      // Sign In Logic
+      
       signInWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
-          // Signed in
+        
           const user = userCredential.user;
           const { uid, email, displayName, photoURL } = user;
           dispatch(
@@ -95,7 +95,7 @@ const Login = () => {
 
   return (
     <div className="relative min-h-screen">
-      {/* <Header /> */}
+    
       <div className="absolute inset-0">
         <img
           className="w-full h-full object-cover"
@@ -139,7 +139,7 @@ const Login = () => {
           >
             {isSignInForm ? "Sign In" : "Sign Up"}
           </button>
-          <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
+          <p className=" text-red-50 py-4 cursor-pointer" onClick={toggleSignInForm}>
             {isSignInForm
               ? "New User? Sign Up Now"
               : "Already registered? Sign In Now."}
